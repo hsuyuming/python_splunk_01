@@ -1,0 +1,42 @@
+{
+    "time": 1505501013.000,
+    "event": "metric",
+    "source": "disk",
+    "host": "host_99",
+    "fields": {
+        "region": "us-west-1",
+        "datacenter": "us-west-1a",
+        "rack": "63",
+        "os": "Ubuntu16.10",
+        "arch": "x64",
+        "team": "LON",
+        "service": "6",
+        "service_version": "0",
+        "service_environment": "test",
+        "path": "/dev/sda1",
+        "fstype": "ext3",
+        "_value": 999311222774,
+        "metric_name": "total"
+    }
+},
+{
+    "time": 1505511013.000,
+    "event": "metric",
+    "source": "disk",
+    "host": "host_99",
+    "fields": {
+        "region": "us-west-1",
+        "datacenter": "us-west-1a",
+        "rack": "63",
+        "os": "Ubuntu16.10",
+        "arch": "x64",
+        "team": "LON",
+        "service": "6",
+        "service_version": "0",
+        "service_environment": "test",
+        "path": "/dev/sda1",
+        "fstype": "ext3",
+        "_value": 1099511627776,
+        "metric_name": "total"
+    }
+}
