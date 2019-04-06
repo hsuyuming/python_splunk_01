@@ -1,28 +1,28 @@
 import requests as r 
+import time
+import datetime
+import random
 
-url='https://localhost:8088/services/collector/event'
-authHeader = {'Authorization': 'Splunk {}'.format('ab059b45-4fe9-44e0-8812-0df21e403d20')}
-payload = {
-    "time": 1505501013.000,
-    "event": "metric",
-    "source": "disk",
-    "host": "host_99",
-    "fields": {
-        "region": "us-west-1",
-        "datacenter": "us-west-1a",
-        "rack": "63",
-        "os": "Ubuntu16.10",
-        "arch": "x64",
-        "team": "LON",
-        "service": "6",
-        "service_version": "0",
-        "service_environment": "test",
-        "path": "/dev/sda1",
-        "fstype": "ext3",
-        "_value": 999311222774,
-        "metric_name": "total"
+
+URL='https://localhost:8088/services/collector/event'
+HEADER = {'Authorization': 'Splunk {}'.format('bf70d86a-1138-4e0a-a372-6e7e6ee4775e')}
+data_dict={}
+data_dict["table_name"]="event_msg"
+
+
+for t in range(1554490629,1554990629):
+    data_dict["row_count"]= random.randint(8000,15000)
+    payload = {
+        "time": t,
+        "host": "0.0.0.0",
+        "source": "demo",
+        "event": data_dict
     }
-}
-result = r.post(url, headers=authHeader, json=payload, verify=False)
-print (result.text)
+    response = r.post(URL, headers=HEADER, json=payload, verify=False)
+    print(response)
+
+
+
+
+
 
